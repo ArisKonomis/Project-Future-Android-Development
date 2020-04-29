@@ -11,17 +11,19 @@ public class Main {
 
         Product product = new Product("A1", "Apple", 1, 50);
         Product product2 = new Product("A2", "Mouse", 10, 5);
-//        System.out.println(product.toString());
-//        System.out.println(product2.toString());
 
-        ArrayList<Product> products = new ArrayList<>();
-        products.add(product);
-        products.add(product2);
-        products.add(product);
+        Basket basket = new Basket();
+        basket.addProduct(product);
+        basket.addProduct(product2);
 
-        for (Product productsArr : products){
-            System.out.println(productsArr);
-        }
+        basket.displayProducts();
+        System.out.println(basket.getTotalCost());
+
+        basket.removeProduct(1);
+        basket.displayProducts();
+        System.out.println(basket.getTotalCost());
+
+
 
 
     }
